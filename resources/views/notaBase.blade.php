@@ -9,8 +9,8 @@
         <div class="header">
           <h1>invoice</h1>
           <div class="logo">
-            <h1>hotel manggasa</h1>
-            <img src="img/logo.png" alt="logo">
+            <h1>hotel lallangan</h1>
+            <img src="img/logo2.png" alt="logo">
           </div>
         </div>
         <hr>
@@ -48,15 +48,15 @@
                   $totalHarga = 0  
                 @endphp
                 @for ($i = 0; $i < count($kamars); $i++)
-                    @if ($kamars[$i] != "-")
+                    @if ($kamars[$i] != null)
                         <tr>
                             <td>{{$kamars[$i]}}</td>
-                            <td>Rp. {{$hargas[$i]}}</td>
+                            <td>Rp. {{number_format($hargas[$i], 0, ",", ".")}} </td>
                             <td>{{$checkins[$i]}}</td>
                             <td>{{$checkouts[$i]}}</td>
-                            <td>Rp. {{$totals[$i]}}</td>
+                            <td>Rp. {{number_format($totals[$i], 0, ",", ".")}} </td>
                             @php
-                              $totalHarga = ((int) $totals[$i] * 1000) + $totalHarga  
+                              $totalHarga = ((int) $totals[$i]) + $totalHarga  
                             @endphp
                         </tr>
                     @else
@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="item"><p>terima kasih atas kunjungannya</p></div>
                 <div class="item">
-                    <p>management hotel manggasa</p>
+                    <p>management hotel lallangan</p>
                 </div>
             </div>
         </div>
